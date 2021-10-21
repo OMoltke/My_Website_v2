@@ -73,7 +73,7 @@ params:
         url: #
       - name: About
         url: blogs/about
-      - name: '#'
+      - name:
         url: '#'
     menu: Menu
     subtitle: By Otto Moltke
@@ -101,10 +101,10 @@ params:
         subtitle: A feasibility study
         title: How much value can batteries create?
         url: blogs/farming
-      - image: #
-        subtitle: #
-        title: #
-        url: #
+      - image:
+        subtitle:
+        title:
+        url:
   two:
     buttonText: Get Started
     enable: no

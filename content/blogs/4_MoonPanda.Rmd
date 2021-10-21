@@ -72,6 +72,7 @@ leaflet(data = Locationdata) %>%
 ### Discography
 
 So far, they have released two albums/EPs
+
 - Their debut EP [**Pastel Pool**](https://open.spotify.com/album/1VADHGJv5U2dMTOiuzEfJd?si=CQt5ztZWS2-t2M2bdud4kA), with the single [*Rabbit*](https://open.spotify.com/track/3QKlUeQNF0vZeu9cREzVAy?si=483f6e2852d14e0f). The music video of Rabbit was a [Staff Pick on Vimeo](https://vimeo.com/270627606)
 
 - Their follow-up EP [**Make Well**](https://open.spotify.com/album/6GVlVlX27a6TuKPE4QjITn?si=0gicdHs9RROWj0GzFKoxcg), with the single [*Slow Drive*](https://open.spotify.com/track/5fzxQ6stOUTlSIz08aySvW?si=b1e783bd1cab4932).

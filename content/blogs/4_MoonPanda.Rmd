@@ -24,8 +24,6 @@ library(vembedr)
 
 # Moon Panda
 
-
-
 My brother, Gustav, and his wife, Maddy, have a band together. The band is called [**Moon Panda**](https://www.facebook.com/MoonPandaMusic/).
 
 Maddy is from *San Diego, California* and Gustav is from *Haslev, Denmark*. They met at [Berklee College of Music](https://www.berklee.edu/) in Boston, USA, where they both studied their undergraduate. Now, they are married, live in Denmark, and have a dog named BMO.
@@ -83,24 +81,4 @@ So far, they have released two albums/EPs
 Next up is Moon Panda's upcoming album: **What on Earth**. 
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-Sys.setenv(SPOTIFY_CLIENT_ID = '782f447f740e4931b477b78ca7fdb72b')
-Sys.setenv(SPOTIFY_CLIENT_SECRET = 'a44097ace25a45b4a216173e6a4193f4')
-
-access_token <- get_spotify_access_token()
-```
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(spotifyr)
-beatles <- get_artist_audio_features('the beatles')
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-
-beatles %>% 
-    count(key_mode, sort = TRUE) %>% 
-    head(5) %>% 
-    kable()
-```
 

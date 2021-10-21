@@ -96,9 +96,9 @@ params:
         subtitle: A band you should check out!
         title: Moon Panda
         url: blogs/moonpanda
-      - image: farming.jpg
-        subtitle: How do we save the planet while feeding its population?
-        title: The Future of Farming
+      - image: solarpanels.jpg
+        subtitle: A feasibility study
+        title: How much value can batteries create?
         url: blogs/farming
       - image: cover_cycling.jpg
         subtitle: A Danish Summer day spent on the bike

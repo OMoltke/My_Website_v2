@@ -1,0 +1,27 @@
+---
+title: "Save for later_codes"
+author: "Otto Moltke"
+date: "21/10/2021"
+output: html_document
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+Sys.setenv(SPOTIFY_CLIENT_ID = '782f447f740e4931b477b78ca7fdb72b')
+Sys.setenv(SPOTIFY_CLIENT_SECRET = 'a44097ace25a45b4a216173e6a4193f4')
+
+access_token <- get_spotify_access_token()
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(spotifyr)
+beatles <- get_artist_audio_features('the beatles')
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+beatles %>% 
+    count(key_mode, sort = TRUE) %>% 
+    head(5) %>% 
+    kable()
+```

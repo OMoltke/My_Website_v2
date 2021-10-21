@@ -100,7 +100,7 @@ params:
       - image: solarpanels.jpg
         subtitle: A feasibility study
         title: How much value can batteries create?
-        url: blogs/farming
+        url: blogs/solarbatteries
       - image:
         subtitle: Let's do it all again
         title: Back to the top

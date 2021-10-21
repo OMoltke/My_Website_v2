@@ -19,8 +19,9 @@ params:
         title: Address
     buttonClear: Clear
     buttonSend: Send message
+      - url:'mailto:omoltke.mfa2022@london.edu'
     email: 
-      - email: 'omoltke.mfa2022@london.edu'
+      - email: omoltke.mfa2022@london.edu
         title: Email
     enable: yes
     phone:
@@ -100,10 +101,10 @@ params:
         subtitle: A feasibility study
         title: How much value can batteries create?
         url: blogs/farming
-      - image: cover_cycling.jpg
-        subtitle: A Danish Summer day spent on the bike
-        title: A Tour of Southern Denmark
-        url: blogs/bike
+      - image: #
+        subtitle: #
+        title: #
+        url: #
   two:
     buttonText: Get Started
     enable: no

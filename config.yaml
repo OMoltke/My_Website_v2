@@ -102,9 +102,9 @@ params:
         title: How much value can batteries create?
         url: blogs/farming
       - image:
-        subtitle:
-        title:
-        url:
+        subtitle: Let's do it all again
+        title: Back to the top
+        url: '#'
   two:
     buttonText: Get Started
     enable: no

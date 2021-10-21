@@ -5,33 +5,24 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: OttoMoltke_CV.jpg
+image: GroupPhoto_InCompost.jpg
 keywords: ""
 slug: experiences
 title: MFA Away Day in pictures
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse) # the usual stuff: dplyr, readr, and other goodies
-library(lubridate) # to handle dates
-library(GGally) # for correlation-scatter plot matrix
-library(ggfortify) # to produce residual diagnostic plots
-library(rsample) # to split dataframe in training- & testing sets
-library(janitor) # clean_names()
-library(broom) # use broom:augment() to get tidy table with regression output, residuals, etc
-library(huxtable) # to get summary table of all models produced
-library(kableExtra) # for formatting tables
-library(moderndive) # for getting regression tables
-library(skimr) # for skim
-library(mosaic)
 library(leaflet) # for interactive HTML maps
-library(tidytext)
-library(viridis)
-library(vroom)
-library(Hmisc) # to compute correlation matrix with p-values
-library(corrplot) # to plot corr matrix
-library(huxtable)
-library(ggthemes)
+```
+
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
 ```
 
 # Making friendships while making a difference
@@ -60,37 +51,96 @@ leaflet(data = Locationdata) %>%
 ## Group B4
 It was the first time, I was going to meet my study group, group B4. 
 
-The group consists of **Daria** from Russia, **Leilah** from the UK, **Yuna** from China, **Martin** from Bulgaria, **Allen** from China, **Neel** from India, and myself, **Otto**, from Denmark. So we are a very diverse group. 
+The group consists of:
+- **Daria** from Russia
+- **Leilah** from the UK
+- **Yuna** from China
+- **Martin** from Bulgaria
+- **Allen** from China
+- **Neel** from India, 
+- and myself, **Otto**, from Denmark. 
+
+So we are a very diverse group. 
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/GroupPhoto_Selfie.jpg",error =FALSE)
+```
 
 ## Task 1: Build composte containers
 Our first task was to build compost containers for the locals to use. The containers were made of wood, which we cut out and mounted together.
 
-PICTURE OF CUTOUT
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/CuttingWood.jpg",error =FALSE)
+```
 
 After bulding the basic components of the containers, we carried them to place, where they were supposed to be used. Here, we finally mounted them together.
 
-PICTURE OF MOUNTING CONTAINERS
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/Moritz_ScrewdriverCasual.jpg",error =FALSE)
+```
 
-Finally, we were able to fill in the composte.
+As is shown by Mariana below, this required **full** concentration in order to make sure everything was aligned.
 
-PICTURE OF PUTTING IT ALL TOGETHER
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/Mariana_Concentrated.jpg",error =FALSE)
+```
 
-GROUP PHOTO
+The final touch was the removable front piece, which had to be *hand cut* in order to make sure it fitted on the milimeter.
 
-Thus, we were able to leave the site for lunch.
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/MoritzMartin_Sawing.jpg",error =FALSE)
+```
+
+With pride, we could now step in to our newly built containers for a final group photo.
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/GroupPhoto_InCompost.jpg",error =FALSE)
+```
+
+Here, we thought we were done. However, one last task remained - filling in the compost, which was lying in a big pile.
+
+Moritz took lead, and he can be seen, posing proudly with the end result, below.
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/Moritz_Complete_Proud.jpg",error =FALSE)
+```
+
+Thus, we were able to leave the site for lunch at the playground.
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/Lunch_Playground.jpg",error =FALSE)
+```
 
 ## Task 2: Gardening
 
 In the afternoon, we worked with gardening. Here, one of our special tasks was to relocate a spiky bush. A process, which is documented below:
 
-PICTURE OF BUSH 1
-PICTURE OF BUSH 2
+*First, we needed to dig out the bush, without hurting its roots.*
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/Plant_OutOfGround.jpg",error =FALSE)
+```
+
+*Then, carefully, we relocated the bush in a safe corner.*
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/PlantPlanted_Above.jpg",error =FALSE)
+```
 
 I thoroughly enjoy gardening, so although the afternoon was hard work, it was a nice experience.
 
 At the end of the day, we were rewarded with two things.
-First, we got an icecream.
-Second, we got to see the local children enter the playground and make use of the new additions, which we had been working on.
+First, we got an icecream from this great guy, whilst seeing the kids come in and start using the new features on the playground
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/PostWork_IceCream.jpg",error =FALSE)
+```
+
+Second, we went to this great pub by the riverside and got a pint after a hard days work.
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/GroupPhoto_ByWater",error =FALSE)
+```
 
 ## Key Takeaways
 

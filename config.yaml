@@ -8,7 +8,7 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      My name is Otto Moltke, I come from Denmark, and I study at London Business School. Welcome to my portfolio.
+      Feel free to explore this site to get to know more about me and my interests.
     title: Otto Moltke's Portfolio
   blog: {}
   contact:
@@ -19,7 +19,7 @@ params:
         title: Address
     buttonClear: Clear
     buttonSend: Send message
-    email:
+    email: omoltke.mfa2022@london.edu
       - email: omoltke.mfa2022@london.edu
         title: Email
     enable: yes

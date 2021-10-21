@@ -5,13 +5,64 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: OttoMoltke_CV.jpg
+image: revenuestacking.JPG
 keywords: ""
 slug: farming
-title: The Future of Farming
+title: Investigating the economic feasibility of energy storage
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p><img src="https://media.giphy.com/media/RfqzvLD914vlItAzVS/giphy.gif" /></p>
+<p>In my bachelor thesis, my bachelor buddy and I investigated the economic feasibility of integrating grid-scale energy storage with utility-scale solar PV plants. To do our study, we needed to process large amounts of data - more specifically, 7 years worth of hourly observations of electricity prices - and conduct monte carlo simulations on this data. We did this using the software, Crystal Ball, in MS Excel. After oiur course in Data Analytics for Finance, I am sure that we could have conducted this analysis much quicker, had we been proficient in R. However, here, I will take you through our approach and reflect on the potential applications of R in this context.</p>
+<div id="abstract" class="section level3">
+<h3>Abstract:</h3>
+<p><em>In this paper, we develop a generic model to assess the economic feasibility of integrating grid-scale energy storage with intermittent energy sources. The paper concludes a positive impact on the financial return on investments by integrating a flywheel energy storage solution in utility-scale solar PV based on a case study in Northern Europe. We identify and evaluate three different revenue streams of solar PV with energy storage:</em>
+<em>(I) overpowering capacity</em>
+<em>(II) energy trading, and</em>
+<em>(III) reserve capacity.</em>
+<em>Our findings show that the individual revenue streams are insufficient to cover the initial investment cost. Current studies on energy storage are limited, as they do not consider the possibility of operating all the revenue streams at the same time. Our findings contradict previous research indi-cating that participation in the reserve capacity market (III) is essential for the economic feasibility of energy storage. We conclude that a positive NPV is achievable through revenue stream (I) and (II) together. However, in support of the research, we find that participation in the reserve capacity mar-ket (III) significantly increases investment returns. We investigate the excess energy production of solar PV plants and how to utilise it to expand total energy output (I). To evaluate energy trading (II), we model the stochastic behaviour of electricity prices through a deterministic Markov chain of Gen-eralised Wiener Processes observed in discrete states. Using the drift and variance obtained from historical electricity price data, we simulate the electricity price fluctuations and energy trading using Monte Carlo simulations with a built-in real option.</em></p>
+</div>
+<div id="deployment-of-energy-storage-in-connection-with-intermittent-energy-sources" class="section level2">
+<h2>Deployment of energy storage in connection with intermittent energy sources</h2>
+<p>A few concepts need to be understood in order to progress.</p>
+<div id="pricing-and-price-development-of-electricity" class="section level3">
+<h3>Pricing and price development of electricity</h3>
+<p>First, the pricing of electricity is determined by marginal cost of production for different sources and required energy, as shown below.</p>
+<p><img src="/img/powerpricing.JPG" width="800px" /></p>
+<p>Thus, as in any other market, the price is driven by supply and demand. The special thing about the electricity market is the full commoditisation of the product, while the production methods vary significantly in both input and processes.</p>
+<p>After pulling hourly price data from the European electricity market, <a href="https://www.nordpoolgroup.com/"><em>Nordpool</em></a>, we found an expected pattern in price development throughout the day.</p>
+<p><img src="/img/historicalpricecurve.JPG" width="800px" /></p>
+</div>
+<div id="utilisation-of-energy-storage-excess-production" class="section level3">
+<h3>Utilisation of energy storage: Excess production</h3>
+<p>Our first revenue stream to utilise was the <strong>excess production from overpowering</strong>. Due to the low cost of solar panels, scarcity of grid connection, and daily change in production, developers are increasingly <em>overpowering</em> their solar parks in order to utilise the grid connection as much as possible. This is show below.</p>
+<p><img src="/img/overpoweringnostorage.JPG" width="800px" /></p>
+<p>Due to the seasonal change in solar irridation in non-equatorial regions the utilisation of grid connection and excess production changes dramatically in summer and winter.</p>
+<p>By connecting energy storage to these production plants, we are able to capture this excess production and feed it onto the grid, when the production curve dips below the max grid capacity. This is shown below.</p>
+<p><img src="/img/overpoweringwstorage.JPG" width="800px" /></p>
+<p>Thus the explanation of the first revenue stream: <strong>utilisation of excess production</strong>.</p>
+</div>
+<div id="utilisation-of-energy-storage-energy-trading" class="section level3">
+<h3>Utilisation of energy storage: Energy trading</h3>
+<p>The electricity price fluctuates daily due to changes in supply and demand. As of today, large amounts of electricity cannot be stored. Thus, the urgency factor of electricity is instantaneous. Should one be able to time-shift electricity from one price-area to another, that person would be able to arbitrage on this difference. Since the electricity price, in general, follows a daily pattern, this may be structured as shown below.</p>
+<p><img src="/img/energytrading.JPG" width="800px" /></p>
+<p>By buying in the low-price environment and selling in a high-price environment, it is possible to profit from this difference. One could rightly arguenthat as soon as storage technologies are feasible, this opportunity will be cannibalised. This is true. However, as intermittent energy sources increase the share in the energy mix, supply and demand mis-matches are expected to increase, increasing this arbitrage opportunity.</p>
+</div>
+<div id="utilisation-of-energy-storage-reserve-capacity" class="section level3">
+<h3>Utilisation of energy storage: Reserve capacity</h3>
+<p>Our third and final revenue stream derived from <strong>offering the energy storage as reserve capacity in the market</strong>. By doing this, regulators of the energy grid, may dispatch the energy units in order to stabilise the overall grid as the planned production never meets exactly the actual demand. We found that this had high fees. However, it restricted some storage capacity to use for the other two revenue streams. This dynamic is shown below:</p>
+<p><img src="/img/reservecapacity.JPG" width="800px" /></p>
+</div>
+<div id="utilisation-of-energy-storage-revenue-stacking" class="section level3">
+<h3>Utilisation of energy storage: Revenue stacking</h3>
+<p>It is worth noting the high share of idleness in energy storage in each of these three separate scenarios. Both of the grid connection and of the storage capacity. To decrease idleness, we combined all three revenue streams, a concept known as <strong>revenue stacking</strong>.</p>
+<p>By applying all three approaches at once, the below scenario can be outlined.</p>
+<p><img src="/img/revenuestacking.JPG" width="800px" /></p>
+<p>This is our final application method, and this was the mode of operation, which we tried to optimise by applying real options theory and conducting Monte Carlo simulations.</p>
+</div>
+</div>
+<div id="takeaways-from-working-with-r" class="section level2">
+<h2>Takeaways from working with R</h2>
+<p>Our specific data and outcome is unfortunately <em>confidential</em>, per the agreement with our two partner companies, solar developer <a href="https://www.begreen.dk/en"><strong>BeGreen</strong></a>, and energy storage manufacturer <a href="https://wattsuppower.com/"><strong>WattsUp Power</strong></a>. Thus, we will not dive further into the calculations. However, it would be interesting to revisit our approach using R. A great advantage of using R in this case, would be the ease of rerunning the whole data set with updated data. To do this with our existing Excel-model would require us to re-pull the raw data and conduct a significant amount of data wrangling before being able to re-run the Monte Carlo Simulations.</p>
+</div>

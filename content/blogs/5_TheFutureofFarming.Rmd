@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: OttoMoltke_CV.jpg
+image: revenuestacking.JPG
 keywords: ""
 slug: farming
 title: Investigating the economic feasibility of energy storage
@@ -24,7 +24,7 @@ In my bachelor thesis, my bachelor buddy and I investigated the economic feasibi
 
 A few concepts need to be understood in order to progress. 
 
-###Pricing and price development of electricity
+### Pricing and price development of electricity
 
 First, the pricing of electricity is determined by marginal cost of production for different sources and required energy, as shown below.
 

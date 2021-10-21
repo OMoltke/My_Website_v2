@@ -77,7 +77,7 @@ knitr::include_graphics("/img/CuttingWood.jpg",error =FALSE)
 After bulding the basic components of the containers, we carried them to place, where they were supposed to be used. Here, we finally mounted them together.
 
 ```{r, echo=FALSE, out.width = "800px"}
-knitr::include_graphics("/img/Moritz_ScrewdriverCasual.jpg",error =FALSE)
+knitr::include_graphics("/img/Moritz_Screwdriver_Casual.jpg",error =FALSE)
 ```
 
 As is shown by Mariana below, this required **full** concentration in order to make sure everything was aligned.

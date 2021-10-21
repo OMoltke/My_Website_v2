@@ -19,7 +19,7 @@ params:
         title: Address
     buttonClear: Clear
     buttonSend: Send message
-    email: omoltke.mfa2022@london.edu
+    email: 
       - email: omoltke.mfa2022@london.edu
         title: Email
     enable: yes
@@ -88,7 +88,7 @@ params:
         subtitle: Making new friends while making an difference
         title: MFA Away Day
         url: blogs/experiences
-      - image: dry.jpg
+      - image: drought.jpg
         subtitle: Science and politics
         title: Climate change - Data and opinion
         url: blogs/programming
@@ -100,7 +100,7 @@ params:
         subtitle: How do we save the planet while feeding its population?
         title: The Future of Farming
         url: blogs/farming
-      - image: pic06.jpg
+      - image: cover_cycling.jpg
         subtitle: A Danish Summer day spent on the bike
         title: A Tour of Southern Denmark
         url: blogs/bike

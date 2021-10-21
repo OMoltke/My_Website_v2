@@ -1,14 +1,14 @@
 ---
-categories:
-- ""
-- ""
-date: "2017-10-31T21:28:43-05:00"
-description: ""
-draft: false
-image: OttoMoltke_CV.jpg
-keywords: ""
+title: "Working in R"
+date: '2017-10-31T21:28:43-05:00'
+description: ''
+draft: no
+image: theiceismelting.jpg
+keywords: ''
 slug: programming
-title: Working in R
+categories:
+- ''
+- ''
 ---
 
 ```{r, setup, include=FALSE}
@@ -47,7 +47,7 @@ library(ggtext)
 
 # Climate change and temperature anomalies 
 
-The year before I started studying at London Business School, I worked for Danish energy company [Ørsted](https://orsted.co.uk/), which specialises in offshore wind. Ørsted was named [world's most for the 3rd year in a row](https://orsted.co.uk/about-us/worlds-most-sustainable-energy-company?gclid=CjwKCAjw_L6LBhBbEiwA4c46ugeYtqek06uswZ7dyYGUeBn79XMwqFrNh09ZbyLPNVMg8Yp4EDJn1hoCVsEQAvD_BwE) in 2021. I find renewable energy and the green transition in general very interesting. Therefore, I really enjoyed working with NASA's data on *Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies* in the Northern Hemisphere at [NASA's Goddard Institute for Space Studies](https://data.giss.nasa.gov/gistemp) as an indicator of climate change. On this site, I would like to take you through our work.
+The year before I started studying at London Business School, I worked for Danish energy company [Ørsted](https://orsted.co.uk/), which specialises in offshore wind. Ørsted was named [world's most for the 3rd year in a row](https://orsted.co.uk/about-us/worlds-most-sustainable-energy-company?gclid=CjwKCAjw_L6LBhBbEiwA4c46ugeYtqek06uswZ7dyYGUeBn79XMwqFrNh09ZbyLPNVMg8Yp4EDJn1hoCVsEQAvD_BwE) in 2021. I find renewable energy and the green transition in general very interesting. Therefore, I really enjoyed working with NASA's data on *Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies* in the Northern Hemisphere at [NASA's Goddard Institute for Space Studies](https://data.giss.nasa.gov/gistemp) as an indicator of climate change. On this site, I would like to take you through our work, as it shows both some interesting insights, but also a wide range of data wrangling and data illustration using R.
 
 The [tabular data of temperature anomalies can be found here](https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.txt)
 
@@ -312,7 +312,9 @@ party_ci
 
 Does it appear that whether or not a respondent believes the earth is warming is independent of their party ideology?
 
-> Looking at the four confidence intervals, we can see that none of them overlap, suggesting that opinion on wether or not a respondent believes the earth is warming is dependent on political ideology. 
+> Looking at the four confidence intervals, we could see that none of them overlap, suggesting that opinion on wether or not a respondent believes the earth is warming **is** dependent on political ideology. 
 
-You may want to read on [The challenging politics of climate change](https://www.brookings.edu/research/the-challenging-politics-of-climate-change/)
+Thus, we conclude our work with analysing climate change from a scientific perspective as well as the influence of political views' impact on perception of climate change.
+
+To dive deeper in to this topic, you may want to read on [The challenging politics of climate change](https://www.brookings.edu/research/the-challenging-politics-of-climate-change/)
 

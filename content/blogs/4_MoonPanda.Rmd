@@ -1,37 +1,20 @@
 ---
-categories:
-- ""
-- ""
-date: "2017-10-31T21:28:43-05:00"
-description: ""
-draft: false
-image: OttoMoltke_CV.jpg
-keywords: ""
+title: "Moon Panda"
+date: '2017-10-31T21:28:43-05:00'
+description: ''
+draft: no
+image: moonpanda_pool.jpg
+keywords: ''
 slug: moonpanda
-title: Moon Panda
+categories:
+- ''
+- ''
 ---
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse) # the usual stuff: dplyr, readr, and other goodies
 library(lubridate) # to handle dates
-library(GGally) # for correlation-scatter plot matrix
-library(ggfortify) # to produce residual diagnostic plots
-library(rsample) # to split dataframe in training- & testing sets
-library(janitor) # clean_names()
-library(broom) # use broom:augment() to get tidy table with regression output, residuals, etc
-library(huxtable) # to get summary table of all models produced
-library(kableExtra) # for formatting tables
-library(moderndive) # for getting regression tables
-library(skimr) # for skim
-library(mosaic)
-library(leaflet) # for interactive HTML maps
-library(tidytext)
-library(viridis)
-library(vroom)
-library(Hmisc) # to compute correlation matrix with p-values
-library(corrplot) # to plot corr matrix
-library(huxtable)
 library(ggthemes)
 library(spotifyr)
 library(knitr)
@@ -41,6 +24,83 @@ library(vembedr)
 
 # Moon Panda
 
-My brother, Gustav, and his wife, Maddy, have a band together. The band is called [Moon Panda](https://www.facebook.com/MoonPandaMusic/).
 
-They have just released their newest song [Vacationer on Spotify](https://open.spotify.com/track/278xRLcHJj4cobGDe8BLp3?si=aabe5a817ee14819) along with its [music video on Youtube](https://www.youtube.com/watch?v=1oSCsi9GK0s). 
+
+My brother, Gustav, and his wife, Maddy, have a band together. The band is called [**Moon Panda**](https://www.facebook.com/MoonPandaMusic/).
+
+Maddy is from *San Diego, California* and Gustav is from *Haslev, Denmark*. They met at [Berklee College of Music](https://www.berklee.edu/) in Boston, USA, where they both studied their undergraduate. Now, they are married, live in Denmark, and have a dog named BMO.
+
+```{r, echo=FALSE, out.width = "800px"}
+knitr::include_graphics("/img/MoonPanda_Pool.jpg",error =FALSE)
+```
+
+They have just released their newest song [**Vacationer** on Spotify](https://open.spotify.com/track/278xRLcHJj4cobGDe8BLp3?si=aabe5a817ee14819) along with its [music video on Youtube](https://www.youtube.com/watch?v=1oSCsi9GK0s).
+
+[![/img/vacationerfrontimage.JPG](/img/vacationerfrontimage.JPG)](https://www.youtube.com/watch?v=1oSCsi9GK0s)
+
+Vacationer is the first single for their upcoming album **What on Earth**, which can be preordered on their [webshop](https://moonpanda.bandcamp.com/music). Here, you can also buy other essentials, such as [*t-shirts*](https://moonpanda.bandcamp.com/merch/make-well-ep-t-shirt-white), [*socks*](https://moonpanda.bandcamp.com/merch/moon-panda-socks), and [*tea*](https://moonpanda.bandcamp.com/merch/anti-gravi-tea). However, if you want to get a bang for your buck, you should just go for the [**Ultimate Fanda Bundle**](https://moonpanda.bandcamp.com/merch/ultimate-fanda-bundle).
+
+> *Designed for the super-smart consumer. Wow, you're smart if you go for this one!* -Moon Panda on their [**Ultimate Fanda Bundle**](https://moonpanda.bandcamp.com/merch/ultimate-fanda-bundle)
+
+
+### Upcoming UK Tour
+
+On Tuesday the 26th, Moon Panda will start their [UK Tour](https://www.bandsintown.com/a/14112295-moon-panda). The tour plan is as follows:
+
+- [**Prince Albert, Brighton 26/10**](https://www.bandsintown.com/e/102368501-moon-panda-at-prince-albert?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event)
+- [**Horn, St Albans 27/10**](https://www.bandsintown.com/e/102368493-moon-panda-at-horn?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event)
+- [**The Lexington, London 28/10**](https://www.bandsintown.com/e/102368485-moon-panda-at-the-lexington?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event)
+- [**Actress & Bishop, Birmingham 02/11**](https://www.bandsintown.com/e/102705424-moon-panda-at-actress-and-bishop?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event)
+- [**Boileroom, Guildford 04/11**](https://www.bandsintown.com/e/102368512-moon-panda-at-boileroom?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event)
+- [**Voodoo Daddy's, Norwich 06/11**](https://www.bandsintown.com/e/102705434-moon-panda-at-voodoo-daddy's?came_from=251&utm_medium=web&utm_source=artist_page&utm_campaign=event)
+
+```{r, out.width = '80%', echo=FALSE, message=FALSE, warning=FALSE}
+ Locationdata <- data.frame(
+   latitude <- c(50.828517019712514,51.75059594412839,51.53184999546786, 52.48458746646339,51.240055480581724,52.62689743397169),
+   longitude <- c(-0.14066539828781177,-0.3292653088586579, -0.11143785205639005,-1.904704192249074,-0.5730821228759168,1.2951194780721906),
+   venue_name <- 
+     c("Prince Albert", "Horn", "The Lexington", "Actress & Bishop", "Boileroom", "Voodoo Daddy's"),
+   city <- 
+     c("Brighton", "St Albans", "London", "Birmingham", "Guildford", "Norwich"))
+
+leaflet(data = Locationdata) %>% 
+  addProviderTiles("OpenStreetMap.Mapnik") %>% 
+  addCircleMarkers(lng = ~longitude, 
+                   lat = ~latitude, 
+                   radius = 10, 
+                   fillColor = "blue", 
+                   fillOpacity = 0.5,
+                   label = ~venue_name
+                   )
+```
+
+### Discography
+
+So far, they have released two albums/EPs
+- Their debut EP [**Pastel Pool**](https://open.spotify.com/album/1VADHGJv5U2dMTOiuzEfJd?si=CQt5ztZWS2-t2M2bdud4kA), with the single [*Rabbit*](https://open.spotify.com/track/3QKlUeQNF0vZeu9cREzVAy?si=483f6e2852d14e0f). The music video of Rabbit was a [Staff Pick on Vimeo](https://vimeo.com/270627606)
+- Their follow-up EP [**Make Well**](https://open.spotify.com/album/6GVlVlX27a6TuKPE4QjITn?si=0gicdHs9RROWj0GzFKoxcg), with the single [*Slow Drive*](https://open.spotify.com/track/5fzxQ6stOUTlSIz08aySvW?si=b1e783bd1cab4932).
+
+Next up is Moon Panda's upcoming album: **What on Earth**. 
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+Sys.setenv(SPOTIFY_CLIENT_ID = '782f447f740e4931b477b78ca7fdb72b')
+Sys.setenv(SPOTIFY_CLIENT_SECRET = 'a44097ace25a45b4a216173e6a4193f4')
+
+access_token <- get_spotify_access_token()
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(spotifyr)
+beatles <- get_artist_audio_features('the beatles')
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+beatles %>% 
+    count(key_mode, sort = TRUE) %>% 
+    head(5) %>% 
+    kable()
+```
+

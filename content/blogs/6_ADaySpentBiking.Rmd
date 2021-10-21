@@ -11,12 +11,149 @@ slug: bike
 title: Tour of Southern Denmark
 ---
 ```{r}
+
+library(tidyverse) # the usual stuff: dplyr, readr, and other goodies
+library(lubridate) # to handle dates
+library(broom) # use broom:augment() to get tidy table with regression output, residuals, etc
+library(huxtable) # to get summary table of all models produced
+library(kableExtra) # for formatting tables
+library(moderndive) # for getting regression tables
+library(skimr) # for skim
+library(leaflet) # for interactive HTML maps
+library(tidytext)
+library(vroom)
+library(ggthemes)
 library(XML)
-library(OpenStreetMap)
-library(lubridate))
+library(rStrava)
+library(lubridate)
 library(ggmap)
 library(ggplot2)
 library(raster)
 library(sp)
+library(ggmap)
+library(googleAuthR)
+library(dplyr)
 ```
 
+```{r}
+google_key <- register_google("[key=AIzaSyAzdGbrb-lXyq4HN-Dy9_A8hemTK6SBJUY]", write = TRUE)
+```
+
+
+```{r}
+# save the key, do only once
+cat("google_key=AIzaSyAzdGbrb-lXyq4HN-Dy9_A8hemTK6SBJUY\n",
+    file=file.path(normalizePath("~/"), ".Renviron"),
+    append=TRUE)
+
+# retrieve the key, restart R if not found
+mykey <- Sys.getenv("google_key")
+```
+
+```{r}
+library(ggmap)
+register_google(mykey)
+```
+
+
+```{r}
+# save the key, do only once
+cat("google_key=AIzaSyAzdGbrb-lXyq4HN-Dy9_A8hemTK6SBJUY\n",
+    file=file.path(normalizePath("~/"), ".Renviron"),
+    append=TRUE)
+
+mykey <- Sys.getenv("google_key")
+
+
+```
+
+
+```{r}
+app_name <- 'strava' # chosen by user
+app_client_id  <- '73309' # an integer, assigned by Strava
+app_secret <- 'c1ccfcba527685ca8ee1e6e973ba46358d23cace' # an alphanumeric secret, assigned by Strava
+
+# create the authentication token
+stoken <- httr::config(token = strava_oauth(app_name, app_client_id, app_secret, app_scope="activity:read_all"))
+```
+
+```{r, cache = TRUE}
+myinfo <- get_athlete(stoken, id = '15533272')
+```
+
+```{r}
+head(myinfo)
+```
+
+```{r}
+# actitivy id
+my_acts <- get_activity_list(stoken)
+act_data <- compile_activities(my_acts)
+
+    
+get_heat_map(act_data, key = mykey, col = 'darkgreen', size = 2, distlab = F, f = 0.4)
+
+```
+
+Since 2016, I have used the sports tracking app Strava. here, I have tracked the majority of my runs, bike rides, swims and other types of activity. Now, 5 years down the road, it would be fun to see, how my training has developed, which are my favorite distances, if there are any special cases that stand our or similar.
+
+Using the RStrava package, registrering as a developer and gaining an API, we are able to pull data directly from Strava's database. 
+
+First, let's get a count of how many workouts have been carried out over the past 5 years.
+
+```{r}
+act_data %>%
+  count()
+```
+
+447 workouts over 5 * 365 days = 0.245. So, on average, an activity just below every fourth day. However, sometimes activities are recorded 
+
+```{r}
+act_data
+```
+
+```{r}
+act_data %>%
+  filter(type=="Run") %>%
+  ggplot(aes(x=distance)) +
+  geom_histogram(fill = "Blue")
+
+act_data %>%
+  filter(type=="Ride") %>%
+  ggplot(aes(x=distance)) +
+  geom_histogram(fill = "Blue")
+  
+```
+
+```{r}
+act_data %>% 
+  count(type, sort=TRUE) %>% 
+  count() #There are 9 categories.
+  
+act_counts <- act_data %>% 
+  count(type, sort=TRUE) %>%
+  mutate(sum_n=sum(n)) %>% 
+  slice_max(order_by=n, n=9) %>% 
+  mutate(prop=n/sum_n)
+
+act_counts
+```
+
+```{r}
+sum_time <- act_data %>% 
+  summarise(sum_movingtime=sum(moving_time))
+
+sum_time
+
+act_timespent <- act_data %>% 
+  group_by(type) %>%
+  mutate(sum_time=sum(moving_time))
+
+act_timespent
+
+act_timeprop <- act_timespent %>% 
+  count(type, sort=TRUE) %>% 
+  mutate(prop=moving_time/sum_time)
+
+act_timeprop
+```

@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: GroupPhoto_InCompost.jpg
+image: GroupPhoto_InCompost.JPG
 keywords: ""
 slug: experiences
 title: MFA Away Day in pictures
@@ -94,7 +94,7 @@ knitr::include_graphics("/img/MoritzMartin_Sawing.jpg",error =FALSE)
 With pride, we could now step in to our newly built containers for a final group photo.
 
 ```{r, echo=FALSE, out.width = "800px"}
-knitr::include_graphics("/img/GroupPhoto_InCompost.jpg",error =FALSE)
+knitr::include_graphics("/img/GroupPhoto_InCompost.JPG",error =FALSE)
 ```
 
 Here, we thought we were done. However, one last task remained - filling in the compost, which was lying in a big pile.
@@ -139,7 +139,7 @@ knitr::include_graphics("/img/PostWork_IceCream.jpg",error =FALSE)
 Second, we went to this great pub by the riverside and got a pint after a hard days work.
 
 ```{r, echo=FALSE, out.width = "800px"}
-knitr::include_graphics("/img/GroupPhoto_ByWater",error =FALSE)
+knitr::include_graphics("/img/GroupPhoto_ByWater.JPG",error =FALSE)
 ```
 
 ## Key Takeaways

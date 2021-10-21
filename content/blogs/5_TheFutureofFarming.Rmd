@@ -11,7 +11,7 @@ slug: farming
 title: Investigating the economic feasibility of energy storage
 ---
 
-In my bachelor thesis, my bachelor buddy and I investigated the economic feasibility of integrating grid-scale energy storage with utility-scale solar PV plants. To do our study, we needed to process large amounts of data - more specifically, 7 years worth of hourly observations of electricity prices - and conduct monte carlo simulations on this data. We did this using the software, Crystal Ball, in MS Excel. After oiur course in Data Analytics for Finance, I am sure that we could have conducted this analysis much quicker, had we been proficient in R. However, here, I will take you through our approach and reflect on the potential applications of R in this context.
+In my bachelor thesis, my bachelor buddy and I investigated the economic feasibility of integrating grid-scale energy storage with utility-scale solar PV plants. To do our study, we needed to process large amounts of data - more specifically, 7 years worth of hourly observations of electricity prices - and conduct monte carlo simulations on this data. We did this using the software, Crystal Ball, in MS Excel. After our course in Data Analytics for Finance, I am sure that we could have conducted this analysis much quicker, had we been proficient in R. However, here, I will take you through our approach and reflect on the potential applications of R in this context.
 
 ### Abstract:
 *In this paper, we develop a generic model to assess the economic feasibility of integrating grid-scale energy storage with intermittent energy sources. The paper concludes a positive impact on the financial return on investments by integrating a flywheel energy storage solution in utility-scale solar PV based on a case study in Northern Europe. We identify and evaluate three different revenue streams of solar PV with energy storage:*
@@ -42,15 +42,15 @@ knitr::include_graphics("/img/historicalpricecurve.JPG",error =FALSE)
 
 ### Utilisation of energy storage: Excess production
 
-Our first revenue stream to utilise was the **excess production from overpowering**. Due to the low cost of solar panels, scarcity of grid connection, and daily change in production, developers are increasingly *overpowering* their solar parks in order to utilise the grid connection as much as possible. This is show below.
+Our first revenue stream to utilise was the **excess production from overpowering**. Due to the low cost of solar panels, scarcity of grid connection, and daily change in production, developers are increasingly *overpowering* their solar parks in order to utilise the grid connection as much as possible. This is shown below.
 
 ```{r, echo=FALSE, out.width = "800px"}
 knitr::include_graphics("/img/overpoweringnostorage.JPG",error =FALSE)
 ```
 
-Due to the seasonal change in solar irridation in non-equatorial regions the utilisation of grid connection and excess production changes dramatically in summer and winter.
+Due to the seasonal change in solar irradiation in non-equatorial regions the utilisation of grid connection and excess production changes dramatically in summer and winter.
 
-By connecting energy storage to these production plants, we are able to capture this excess production and feed it onto the grid, when the production curve dips below the max grid capacity. This is shown below.
+By connecting energy storage to these production plants, we are able to capture the excess production and feed it onto the grid when the production curve dips below the max grid capacity. This is shown below as *additional output*.
 
 ```{r, echo=FALSE, out.width = "800px"}
 knitr::include_graphics("/img/overpoweringwstorage.JPG",error =FALSE)
@@ -66,11 +66,11 @@ The electricity price fluctuates daily due to changes in supply and demand. As o
 knitr::include_graphics("/img/energytrading.JPG",error =FALSE)
 ```
 
-By buying in the low-price environment and selling in a high-price environment, it is possible to profit from this difference. One could rightly arguenthat as soon as storage technologies are feasible, this opportunity will be cannibalised. This is true. However, as intermittent energy sources increase the share in the energy mix, supply and demand mis-matches are expected to increase, increasing this arbitrage opportunity.
+By buying in the low-price environment and selling in a high-price environment, it is possible to profit from this difference. One could rightly argue that as soon as storage technologies are feasible, this opportunity will be cannibalised. This is true. However, as intermittent energy sources increase their share in the energy mix, supply and demand mis-matches are expected to increase, increasing this arbitrage opportunity.
 
 ### Utilisation of energy storage: Reserve capacity
 
-Our third and final revenue stream derived from **offering the energy storage as reserve capacity in the market**. By doing this, regulators of the energy grid, may dispatch the energy units in order to stabilise the overall grid as the planned production never meets exactly the actual demand. We found that this had high fees. However, it restricted some storage capacity to use for the other two revenue streams. This dynamic is shown below:
+Our third and final revenue stream derived from **offering the energy storage as reserve capacity in the market**. By doing this, regulators of the energy grid gain access to dispatch the energy units in order to stabilise the overall grid as the planned production never meets exactly the actual demand. We found that this had high fees and was an opportunity to drive profits. However, it restricted some storage capacity to use for the other two revenue streams. This dynamic is shown below:
 
 ```{r, echo=FALSE, out.width = "800px"}
 knitr::include_graphics("/img/reservecapacity.JPG",error =FALSE)
@@ -78,7 +78,7 @@ knitr::include_graphics("/img/reservecapacity.JPG",error =FALSE)
 
 ### Utilisation of energy storage: Revenue stacking
 
-It is worth noting the high share of idleness in energy storage in each of these three separate scenarios. Both of the grid connection and of the storage capacity. To decrease idleness, we combined all three revenue streams, a concept known as **revenue stacking**.
+It is worth noting the large proportion of idleness in energy storage in each of these three separate scenarios. Both of the grid connection and of the storage capacity. To decrease idleness, we combined all three revenue streams, a concept known as **revenue stacking**.
 
 By applying all three approaches at once, the below scenario can be outlined.
 
@@ -89,4 +89,6 @@ knitr::include_graphics("/img/revenuestacking.JPG",error =FALSE)
 This is our final application method, and this was the mode of operation, which we tried to optimise by applying real options theory and conducting Monte Carlo simulations.
 
 ## Takeaways from working with R
-Our specific data and outcome is unfortunately *confidential*, per the agreement with our two partner companies, solar developer [**BeGreen**](https://www.begreen.dk/en), and energy storage manufacturer [**WattsUp Power**](https://wattsuppower.com/). Thus, we will not dive further into the calculations. However, it would be interesting to revisit our approach using R. A great advantage of using R in this case, would be the ease of rerunning the whole data set with updated data. To do this with our existing Excel-model would require us to re-pull the raw data and conduct a significant amount of data wrangling before being able to re-run the Monte Carlo Simulations. 
+Our specific data and outcome is unfortunately *confidential*, per the agreement with our two partner companies, solar developer [**BeGreen**](https://www.begreen.dk/en), and energy storage manufacturer [**WattsUp Power**](https://wattsuppower.com/). Thus, we will not dive further into the calculations. However, it would be interesting to revisit our approach using R. A great advantage of using R in this case, would be the ease of re-running the whole data set with updated data. To do this with our existing Excel-model, would require us to re-pull the raw data and conduct a significant amount of data wrangling before being able to re-run the Monte Carlo Simulations. 
+
+Thus, before working with large amounts of data in the future, I would think twice and consider, whether it would be better to do it with R.

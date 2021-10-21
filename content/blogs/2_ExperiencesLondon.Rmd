@@ -54,17 +54,11 @@ It was the first time, I was going to meet my study group, group B4.
 The group consists of:
 
 - **Daria** from Russia
-
 - **Leilah** from the UK
-
 - **Yuna** from China
-
 - **Martin** from Bulgaria
-
 - **Allen** from China
-
 - **Neel** from India, 
-
 - and myself, **Otto**, from Denmark. 
 
 Thus, we are quite the diverse group. 
@@ -143,7 +137,7 @@ First, we got an icecream from this great guy, whilst seeing the kids come in an
 knitr::include_graphics("/img/PostWork_IceCream.jpg",error =FALSE)
 ```
 
-Second, we went to this great pub by the riverside and got a pint after a hard days work.
+Second, we went to this great pub by the riverside and got a pint after a hard day's work.
 
 ```{r, echo=FALSE, out.width = "800px"}
 knitr::include_graphics("/img/GroupPhoto_ByWater.JPG",error =FALSE)

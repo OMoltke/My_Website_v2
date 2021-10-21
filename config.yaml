@@ -20,11 +20,11 @@ params:
     buttonClear: Clear
     buttonSend: Send message
     email: 
-      - email: omoltke.mfa2022@london.edu
+      - email: 'omoltke.mfa2022@london.edu'
         title: Email
     enable: yes
     phone:
-      - phone: 0045 40 31 65 04
+      - phone: 00 45 40 31 65 04
         title: Phone
   custom_css: []
   custom_js: []

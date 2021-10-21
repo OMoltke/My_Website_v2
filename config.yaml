@@ -74,7 +74,7 @@ params:
       - name: About
         url: blogs/about
       - name: #
-        url: #
+        url: '#'
     menu: Menu
     subtitle: By Otto Moltke
     title: Personal Portfolio

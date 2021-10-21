@@ -84,19 +84,19 @@ params:
         subtitle: Experiences and achievements
         title: Resume
         url: blogs/cv
-      - image: martinmoritzsawtwo.jpg
+      - image: moritzmartinsawtwo.jpg
         subtitle: Making new friends while making an difference
         title: MFA Away Day
         url: blogs/experiences
-      - image: pic03.jpg
+      - image: dry.jpg
         subtitle: Science and politics
         title: Climate change - Data and opinion
         url: blogs/programming
-      - image: pic04.jpg
+      - image: moonpandalexington.jpg
         subtitle: A band you should check out!
         title: Moon Panda
         url: blogs/moonpanda
-      - image: pic05.jpg
+      - image: farming.jpg
         subtitle: How do we save the planet while feeding its population?
         title: The Future of Farming
         url: blogs/farming

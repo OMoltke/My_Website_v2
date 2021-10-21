@@ -3,7 +3,7 @@ title: "Working in R"
 date: '2017-10-31T21:28:43-05:00'
 description: ''
 draft: no
-image: theiceismelting.jpg
+image: polarbear.jpg
 keywords: ''
 slug: programming
 categories:
@@ -16,7 +16,7 @@ categories:
 
 <div id="climate-change-and-temperature-anomalies" class="section level1">
 <h1>Climate change and temperature anomalies</h1>
-<p>The year before I started studying at London Business School, I worked for Danish energy company <a href="https://orsted.co.uk/">Ørsted</a>, which specialises in offshore wind. Ørsted was named <a href="https://orsted.co.uk/about-us/worlds-most-sustainable-energy-company?gclid=CjwKCAjw_L6LBhBbEiwA4c46ugeYtqek06uswZ7dyYGUeBn79XMwqFrNh09ZbyLPNVMg8Yp4EDJn1hoCVsEQAvD_BwE">world’s most for the 3rd year in a row</a> in 2021. I find renewable energy and the green transition in general very interesting. Therefore, I really enjoyed working with NASA’s data on <em>Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies</em> in the Northern Hemisphere at <a href="https://data.giss.nasa.gov/gistemp">NASA’s Goddard Institute for Space Studies</a> as an indicator of climate change. On this site, I would like to take you through our work, as it shows both some interesting insights, but also a wide range of data wrangling and data illustration using R.</p>
+<p>The year before I started studying at London Business School, I worked for Danish energy company <a href="https://orsted.co.uk/">Ørsted</a>, which specialises in offshore wind. Ørsted was named <a href="https://orsted.co.uk/about-us/worlds-most-sustainable-energy-company?gclid=CjwKCAjw_L6LBhBbEiwA4c46ugeYtqek06uswZ7dyYGUeBn79XMwqFrNh09ZbyLPNVMg8Yp4EDJn1hoCVsEQAvD_BwE">world’s most sustainable energy company for the 3rd year in a row</a> in 2021. I find renewable energy and the green transition in general very interesting. Therefore, I really enjoyed working with NASA’s data on <em>Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies</em> in the Northern Hemisphere at <a href="https://data.giss.nasa.gov/gistemp">NASA’s Goddard Institute for Space Studies</a> as an indicator of climate change. On this site, I would like to take you through our work, as it shows both some interesting insights, but also a wide range of data wrangling and data illustration using R.</p>
 <p>The <a href="https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.txt">tabular data of temperature anomalies can be found here</a></p>
 <div id="data-wrangling" class="section level2">
 <h2>Data wrangling</h2>
@@ -35,7 +35,7 @@ categories:
 <p>We had two objectives in this section:</p>
 <ol style="list-style-type: decimal">
 <li><p>Select the year and the twelve month variables from the <code>weather</code> dataset. We did not need the others (J-D, D-N, DJF, etc.) for this assignment.</p></li>
-<li><p>Convert the dataframe from wide to ‘long’ format. We name the new dataframe as <code>tidyweather</code>, the variable containing the name of the month as <code>month</code>, and the temperature deviation values as <code>delta</code>.</p></li>
+<li><p>Convert the dataframe from wide to ‘long’ format. We named the new dataframe as <code>tidyweather</code>, the variable containing the name of the month as <code>month</code>, and the temperature deviation values as <code>delta</code>.</p></li>
 </ol>
 <pre class="r"><code>weather_new &lt;- weather %&gt;%
   select(Year:Dec) # We select only the year and months variables
@@ -44,7 +44,7 @@ tidyweather &lt;- weather_new %&gt;%
   pivot_longer(cols = Jan:Dec,
                names_to = &quot;Month&quot;,
                values_to = &quot;delta&quot;)</code></pre>
-<p>We inspect our dataframe. It should have three variables now, one each for</p>
+<p>We inspected our dataframe. It should have three variables now, one each for</p>
 <ol style="list-style-type: decimal">
 <li>year,</li>
 <li>month, and</li>
@@ -92,7 +92,7 @@ ggplot(tidyweather, aes(x=date, y = delta))+
     Year %in% c(1981:2010) ~ &quot;1981-2010&quot;,
     TRUE ~ &quot;2011-present&quot;
   ))</code></pre>
-<p>Now that we hac the <code>interval</code> variable, we coulc create a density plot to study the distribution of monthly deviations (<code>delta</code>), grouped by the different time periods we were interested in. In order to group and colour the data by different time period, we set <code>fill</code> to <code>interval</code>.</p>
+<p>Now that we had the <code>interval</code> variable, we could create a density plot to study the distribution of monthly deviations (<code>delta</code>), grouped by the different time periods we were interested in. In order to group and colour the data by different time period, we set <code>fill</code> to <code>interval</code>.</p>
 <pre class="r"><code>ggplot(comparison, aes(x=delta, fill=interval))+
   geom_density(alpha=0.2) +   #density plot with transparency set to 20%
   theme_bw() +                #theme
@@ -175,21 +175,22 @@ bootstrap_ci</code></pre>
 ##      &lt;dbl&gt;    &lt;dbl&gt;
 ## 1     1.01     1.11</code></pre>
 <blockquote>
-<p>So, what is the data showing us?</p>
+<p>So, what was the data showing us?</p>
 </blockquote>
-<p>Our original data shows that with 95% confidence, the true mean deviation in monthly temperature lies between 1.01-1.11 degrees. This does not mean that there is a 95% chance that the true mean lies in that interval, but it does mean that if you were to repeatedly calculate confidence intervals, 95% of these would contain the true mean monthly deviation in temperature. By randomly sampling observations based on the given dataset using the bootstrapping method, the data is showing us that with 95% confidence the monthly temperature between 2011 and present times is on average between 1.02 and 1.11 degrees higher than the historic average for that month in the base period from 1951 to 1980. Thus, the sampling confirms our confidence interval between 1.02 and 1.11. The confidence interval doesn’t contain 0 so we reject the null hypothesis that there is no deviation.</p>
+<p>Our original data shows that with 95% confidence, the true mean deviation in monthly temperature lies between 1.01-1.11 degrees. This does not mean that there is a 95% chance that the true mean lies in that interval, but it does mean that if you were to repeatedly calculate confidence intervals, 95% of these would contain the true mean monthly deviation in temperature. By randomly sampling observations based on the given dataset using the bootstrapping method, the data showed us that with 95% confidence the monthly temperature between 2011 and present times is on average between 1.01 and 1.11 degrees higher than the historic average for that month in the base period from 1951 to 1980. Thus, the sampling confirmed our confidence interval between 1.01 and 1.11. The confidence interval doesn’t contain 0 so we could reject the null hypothesis that there was no deviation.</p>
 </div>
 </div>
 <div id="global-warming-and-political-views-gss" class="section level1">
 <h1>Global warming and political views (GSS)</h1>
+<p>Now, it was interesting to approach the climate question from a different perspective: namely, the political.</p>
 <p><a href="https://www.pewresearch.org/2010/10/27/wide-partisan-divide-over-global-warming/">A 2010 Pew Research poll</a> asked 1,306 Americans, “From what you’ve read and heard, is there solid evidence that the average temperature on earth has been getting warmer over the past few decades, or not?”</p>
-<p>In this exercise we analyze whether there are any differences between the proportion of people who believe the earth is getting warmer and their political ideology. As usual, from the <strong>survey sample data</strong>, we will use the proportions to estimate values of <em>population parameters</em>. The file has 2253 observations on the following 2 variables:</p>
+<p>In this exercise we analysed whether there are any differences between the proportion of people who believe the earth is getting warmer and their political ideology. As usual, from the <strong>survey sample data</strong>, we used the proportions to estimate values of <em>population parameters</em>. The file had 2253 observations on the following 2 variables:</p>
 <ul>
 <li><code>party_or_ideology</code>: a factor (categorical) variable with levels Conservative Republican, Liberal Democrat, Mod/Cons Democrat, Mod/Lib Republican</li>
 <li><code>response</code> : whether the respondent believes the earth is warming or not, or Don’t know/ refuse to answer</li>
 </ul>
 <pre class="r"><code>global_warming_pew &lt;- read_csv(here::here(&quot;data&quot;, &quot;global_warming_pew.csv&quot;))</code></pre>
-<p>You will also notice that many responses should not be taken into consideration, like “No Answer”, “Don’t Know”, “Not applicable”, “Refused to Answer”.</p>
+<p>We noticed that many responses should not be taken into consideration, like “No Answer”, “Don’t Know”, “Not applicable”, “Refused to Answer”.</p>
 <pre class="r"><code>global_warming_pew %&gt;% 
   count(party_or_ideology, response)</code></pre>
 <pre><code>## # A tibble: 12 x 3
@@ -207,7 +208,7 @@ bootstrap_ci</code></pre>
 ## 10 Mod/Lib Republican      Don&#39;t know / refuse to answer    23
 ## 11 Mod/Lib Republican      Earth is warming                135
 ## 12 Mod/Lib Republican      Not warming                     135</code></pre>
-<p>We will be constructing four 95% confidence intervals to estimate population parameters, for the % who believe that <strong>Earth is warming</strong>, according to their party or ideology. You can create the CIs using the formulas by hand, or use <code>prop.test()</code></p>
+<p>We constructed four 95% confidence intervals to estimate population parameters, for the % who believe that <strong>Earth is warming</strong>, according to their party or ideology. We could create the CIs using the formulas by hand, or use <code>prop.test()</code></p>
 <pre class="r"><code>party_ci &lt;- global_warming_pew %&gt;% 
   filter(response != &quot;Don&#39;t know / refuse to answer&quot;) %&gt;%
   mutate(warm = response == &quot;Earth is warming&quot;) %&gt;% 
@@ -229,10 +230,10 @@ party_ci</code></pre>
 ## 2 Liberal Democrat     0.946   0.226        428  0.0109   1.97    0.925    0.968
 ## 3 Mod/Cons Democr~     0.781   0.414        721  0.0154   1.96    0.751    0.811
 ## 4 Mod/Lib Republi~     0.5     0.501        270  0.0305   1.97    0.440    0.560</code></pre>
-<p>Does it appear that whether or not a respondent believes the earth is warming is independent of their party ideology?</p>
+<p>Now we could ask ourselves the question: <em>Does it appear that whether or not a respondent believes the earth is warming is independent of their party ideology?</em></p>
 <blockquote>
 <p>Looking at the four confidence intervals, we could see that none of them overlap, suggesting that opinion on wether or not a respondent believes the earth is warming <strong>is</strong> dependent on political ideology.</p>
 </blockquote>
-<p>Thus, we conclude our work with analysing climate change from a scientific perspective as well as the influence of political views’ impact on perception of climate change.</p>
+<p>Thus, we concluded our work with analysing climate change from a scientific perspective as well as the influence of political views’ impact on perception of climate change.</p>
 <p>To dive deeper in to this topic, you may want to read on <a href="https://www.brookings.edu/research/the-challenging-politics-of-climate-change/">The challenging politics of climate change</a></p>
 </div>

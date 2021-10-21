@@ -52,6 +52,7 @@ leaflet(data = Locationdata) %>%
 It was the first time, I was going to meet my study group, group B4. 
 
 The group consists of:
+
 - **Daria** from Russia
 - **Leilah** from the UK
 - **Yuna** from China
@@ -60,7 +61,7 @@ The group consists of:
 - **Neel** from India, 
 - and myself, **Otto**, from Denmark. 
 
-So we are a very diverse group. 
+Thus, we are quite the diverse group. 
 
 ```{r, echo=FALSE, out.width = "800px"}
 knitr::include_graphics("/img/GroupPhoto_Selfie.jpg",error =FALSE)

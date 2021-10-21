@@ -19,11 +19,3 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE,
   comment = NA, dpi = 300)
 
 ```
-
-# Hey this is a test
-
-```{r}
-1+1
-```
-
-

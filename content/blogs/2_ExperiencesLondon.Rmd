@@ -73,7 +73,7 @@ Thus, we are quite the diverse group.
 knitr::include_graphics("/img/GroupPhoto_Selfie.jpg",error =FALSE)
 ```
 
-## Task 1: Build composte containers
+## Task 1: Build compost containers
 Our first task was to build compost containers for the locals to use. The containers were made of wood, which we cut out and mounted together.
 
 ```{r, echo=FALSE, out.width = "800px"}

@@ -1,51 +1,60 @@
 ---
-categories:
-- ""
-- ""
-date: "2017-10-31T21:28:43-05:00"
-description: ""
-draft: false
+title: "Moon Panda"
+date: '2017-10-31T21:28:43-05:00'
+description: ''
+draft: no
 image: moonpanda_pool.jpg
-keywords: ""
+keywords: ''
 slug: moonpanda
-title: Moon Panda
+categories:
+- ''
+- ''
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/proj4/proj4.min.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers/leaflet-providers_1.9.0.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
 
 
 <div id="moon-panda" class="section level1">
 <h1>Moon Panda</h1>
 <p>My brother, Gustav, and his wife, Maddy, have a band together. The band is called <a href="https://www.facebook.com/MoonPandaMusic/"><strong>Moon Panda</strong></a>.</p>
+<p>Maddy is from <em>San Diego, California</em> and Gustav is from <em>Haslev, Denmark</em>. They met at <a href="https://www.berklee.edu/">Berklee College of Music</a> in Boston, USA, where they both studied their undergraduate. Now, they are married, live in Denmark, and have a dog named BMO.</p>
+<p><img src="/img/MoonPanda_Pool.jpg" width="800px" /></p>
 <p>They have just released their newest song <a href="https://open.spotify.com/track/278xRLcHJj4cobGDe8BLp3?si=aabe5a817ee14819"><strong>Vacationer</strong> on Spotify</a> along with its <a href="https://www.youtube.com/watch?v=1oSCsi9GK0s">music video on Youtube</a>.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">key_mode</th>
-<th align="right">n</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">D major</td>
-<td align="right">115</td>
-</tr>
-<tr class="even">
-<td align="left">C major</td>
-<td align="right">111</td>
-</tr>
-<tr class="odd">
-<td align="left">G major</td>
-<td align="right">90</td>
-</tr>
-<tr class="even">
-<td align="left">A major</td>
-<td align="right">80</td>
-</tr>
-<tr class="odd">
-<td align="left">E major</td>
-<td align="right">68</td>
-</tr>
-</tbody>
-</table>
+<p><a href="https://www.youtube.com/watch?v=1oSCsi9GK0s"><img src="/img/vacationerfrontimage.JPG" alt="/img/vacationerfrontimage.JPG" /></a></p>
+<p>Vacationer is the first single for their upcoming album <strong>What on Earth</strong>, which can be preordered on their <a href="https://moonpanda.bandcamp.com/music">webshop</a>. Here, you can also buy other essentials, such as <a href="https://moonpanda.bandcamp.com/merch/make-well-ep-t-shirt-white"><em>t-shirts</em></a>, <a href="https://moonpanda.bandcamp.com/merch/moon-panda-socks"><em>socks</em></a>, and <a href="https://moonpanda.bandcamp.com/merch/anti-gravi-tea"><em>tea</em></a>. However, if you want to get a bang for your buck, you should just go for the <a href="https://moonpanda.bandcamp.com/merch/ultimate-fanda-bundle"><strong>Ultimate Fanda Bundle</strong></a>.</p>
+<blockquote>
+<p><em>Designed for the super-smart consumer. Wow, you’re smart if you go for this one!</em> -Moon Panda on their <a href="https://moonpanda.bandcamp.com/merch/ultimate-fanda-bundle"><strong>Ultimate Fanda Bundle</strong></a></p>
+</blockquote>
+<div id="upcoming-uk-tour" class="section level3">
+<h3>Upcoming UK Tour</h3>
+<p>On Tuesday the 26th, Moon Panda will start their <a href="https://www.bandsintown.com/a/14112295-moon-panda">UK Tour</a>. The tour plan is as follows:</p>
+<ul>
+<li><a href="https://www.bandsintown.com/e/102368501-moon-panda-at-prince-albert?came_from=251&amp;utm_medium=web&amp;utm_source=artist_page&amp;utm_campaign=event"><strong>Prince Albert, Brighton 26/10</strong></a></li>
+<li><a href="https://www.bandsintown.com/e/102368493-moon-panda-at-horn?came_from=251&amp;utm_medium=web&amp;utm_source=artist_page&amp;utm_campaign=event"><strong>Horn, St Albans 27/10</strong></a></li>
+<li><a href="https://www.bandsintown.com/e/102368485-moon-panda-at-the-lexington?came_from=251&amp;utm_medium=web&amp;utm_source=artist_page&amp;utm_campaign=event"><strong>The Lexington, London 28/10</strong></a></li>
+<li><a href="https://www.bandsintown.com/e/102705424-moon-panda-at-actress-and-bishop?came_from=251&amp;utm_medium=web&amp;utm_source=artist_page&amp;utm_campaign=event"><strong>Actress &amp; Bishop, Birmingham 02/11</strong></a></li>
+<li><a href="https://www.bandsintown.com/e/102368512-moon-panda-at-boileroom?came_from=251&amp;utm_medium=web&amp;utm_source=artist_page&amp;utm_campaign=event"><strong>Boileroom, Guildford 04/11</strong></a></li>
+<li><a href="https://www.bandsintown.com/e/102705434-moon-panda-at-voodoo-daddy&#39;s?came_from=251&amp;utm_medium=web&amp;utm_source=artist_page&amp;utm_campaign=event"><strong>Voodoo Daddy’s, Norwich 06/11</strong></a></li>
+</ul>
+<div id="htmlwidget-1" style="width:80%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["OpenStreetMap.Mapnik",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[50.8285170197125,51.7505959441284,51.5318499954679,52.4845874664634,51.2400554805817,52.6268974339717],[-0.140665398287812,-0.329265308858658,-0.11143785205639,-1.90470419224907,-0.573082122875917,1.29511947807219],7.5,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"blue","fillOpacity":0.2},null,null,null,null,["Prince Albert","Horn","The Lexington","Actress &amp; Bishop","Boileroom","Voodoo Daddy's"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[50.8285170197125,52.6268974339717],"lng":[-1.90470419224907,1.29511947807219]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="discography" class="section level3">
+<h3>Discography</h3>
+<p>So far, they have released two albums/EPs
+- Their debut EP <a href="https://open.spotify.com/album/1VADHGJv5U2dMTOiuzEfJd?si=CQt5ztZWS2-t2M2bdud4kA"><strong>Pastel Pool</strong></a>, with the single <a href="https://open.spotify.com/track/3QKlUeQNF0vZeu9cREzVAy?si=483f6e2852d14e0f"><em>Rabbit</em></a>. The music video of Rabbit was a <a href="https://vimeo.com/270627606">Staff Pick on Vimeo</a>
+- Their follow-up EP <a href="https://open.spotify.com/album/6GVlVlX27a6TuKPE4QjITn?si=0gicdHs9RROWj0GzFKoxcg"><strong>Make Well</strong></a>, with the single <a href="https://open.spotify.com/track/5fzxQ6stOUTlSIz08aySvW?si=b1e783bd1cab4932"><em>Slow Drive</em></a>.</p>
+<p>Next up is Moon Panda’s upcoming album: <strong>What on Earth</strong>.</p>
+</div>
 </div>

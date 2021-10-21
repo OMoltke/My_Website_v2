@@ -15,11 +15,8 @@ categories:
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse) # the usual stuff: dplyr, readr, and other goodies
 library(lubridate) # to handle dates
-library(ggthemes)
-library(spotifyr)
 library(knitr)
-library(tuneR)
-library(vembedr)
+library(leaflet)
 ```
 
 # Moon Panda
@@ -62,14 +59,14 @@ On Tuesday the 26th, Moon Panda will start their [UK Tour](https://www.bandsinto
      c("Brighton", "St Albans", "London", "Birmingham", "Guildford", "Norwich"))
 
 leaflet(data = Locationdata) %>% 
-  addProviderTiles("OpenStreetMap.Mapnik") %>% 
+  addProviderTiles("OpenStreetMap.Mapnik") %>%
   addCircleMarkers(lng = ~longitude, 
                    lat = ~latitude, 
-                   radius = 10, 
+                   radius = 7.5, 
                    fillColor = "blue", 
-                   fillOpacity = 0.5,
-                   label = ~venue_name
-                   )
+                   fillOpacity = 0.2,
+                   label = ~venue_name)
+
 ```
 
 ### Discography

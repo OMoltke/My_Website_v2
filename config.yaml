@@ -62,7 +62,7 @@ params:
   navigation:
     button1:
       - name: Get Started
-        url: blogs
+        url: '#'
     button2:
       - name: Contact
         url: 'mailto:omoltke.mfa2022@london.edu'

@@ -19,7 +19,7 @@ params:
         title: Address
     buttonClear: Clear
     buttonSend: Send message
-      - url:'mailto:omoltke.mfa2022@london.edu'
+    formEmail: /f/myyladel
     email: 
       - email: omoltke.mfa2022@london.edu
         title: Email

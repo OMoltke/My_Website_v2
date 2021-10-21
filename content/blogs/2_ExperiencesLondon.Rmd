@@ -8,5 +8,92 @@ draft: false
 image: OttoMoltke_CV.jpg
 keywords: ""
 slug: experiences
-title: Experiences since moving to London
+title: MFA Away Day in pictures
 ---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse) # the usual stuff: dplyr, readr, and other goodies
+library(lubridate) # to handle dates
+library(GGally) # for correlation-scatter plot matrix
+library(ggfortify) # to produce residual diagnostic plots
+library(rsample) # to split dataframe in training- & testing sets
+library(janitor) # clean_names()
+library(broom) # use broom:augment() to get tidy table with regression output, residuals, etc
+library(huxtable) # to get summary table of all models produced
+library(kableExtra) # for formatting tables
+library(moderndive) # for getting regression tables
+library(skimr) # for skim
+library(mosaic)
+library(leaflet) # for interactive HTML maps
+library(tidytext)
+library(viridis)
+library(vroom)
+library(Hmisc) # to compute correlation matrix with p-values
+library(corrplot) # to plot corr matrix
+library(huxtable)
+library(ggthemes)
+```
+
+# Making friendships while making a difference
+
+On Friday the 3rd of September, Stream B of the MFA 2022 went to help the [Splash Projects](https://splashprojects.com/) rebuild an old playground as well as tidy up some gardening areas.
+
+This was a great opportunity to meet our new fellow students while making a positive impact and get some physical work in. My group, specifically, was group B4. 
+
+The work was carried out in **Swedenborg Gardens**, London, which you can see at the blue dot on the map below.
+
+```{r, out.width = '80%', echo=FALSE, message=FALSE, warning=FALSE}
+ Locationdata <- data.frame(
+   latitude <- 51.51006105235234,
+   longitude <- -0.06272884166683666)
+
+leaflet(data = Locationdata) %>% 
+  addProviderTiles("OpenStreetMap.Mapnik") %>% 
+  addCircleMarkers(lng = ~longitude, 
+                   lat = ~latitude, 
+                   radius = 10, 
+                   fillColor = "blue", 
+                   fillOpacity = 0.5, 
+                   )
+```
+
+## Group B4
+It was the first time, I was going to meet my study group, group B4. 
+
+The group consists of **Daria** from Russia, **Leilah** from the UK, **Yuna** from China, **Martin** from Bulgaria, **Allen** from China, **Neel** from India, and myself, **Otto**, from Denmark. So we are a very diverse group. 
+
+## Task 1: Build composte containers
+Our first task was to build compost containers for the locals to use. The containers were made of wood, which we cut out and mounted together.
+
+PICTURE OF CUTOUT
+
+After bulding the basic components of the containers, we carried them to place, where they were supposed to be used. Here, we finally mounted them together.
+
+PICTURE OF MOUNTING CONTAINERS
+
+Finally, we were able to fill in the composte.
+
+PICTURE OF PUTTING IT ALL TOGETHER
+
+GROUP PHOTO
+
+Thus, we were able to leave the site for lunch.
+
+## Task 2: Gardening
+
+In the afternoon, we worked with gardening. Here, one of our special tasks was to relocate a spiky bush. A process, which is documented below:
+
+PICTURE OF BUSH 1
+PICTURE OF BUSH 2
+
+I thoroughly enjoy gardening, so although the afternoon was hard work, it was a nice experience.
+
+At the end of the day, we were rewarded with two things.
+First, we got an icecream.
+Second, we got to see the local children enter the playground and make use of the new additions, which we had been working on.
+
+## Key Takeaways
+
+Overall, we had a great day. We were able to make a positive difference in a challenged area, and we got to make new friendships and establish bonds inside and outside of our study groups. 
+
+Finally, if you are fortunate enough to have access to our Canvas, you will be able to see the recap video from the day [HERE](https://learning.london.edu/courses/6956/pages/mfa2022-away-day).

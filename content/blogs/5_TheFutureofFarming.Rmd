@@ -10,3 +10,5 @@ keywords: ""
 slug: farming
 title: The Future of Farming
 ---
+
+![](https://media.giphy.com/media/RfqzvLD914vlItAzVS/giphy.gif)

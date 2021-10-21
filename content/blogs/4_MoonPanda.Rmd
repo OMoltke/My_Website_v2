@@ -12,26 +12,35 @@ title: Moon Panda
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse) # the usual stuff: dplyr, readr, and other goodies
+library(lubridate) # to handle dates
+library(GGally) # for correlation-scatter plot matrix
+library(ggfortify) # to produce residual diagnostic plots
+library(rsample) # to split dataframe in training- & testing sets
+library(janitor) # clean_names()
+library(broom) # use broom:augment() to get tidy table with regression output, residuals, etc
+library(huxtable) # to get summary table of all models produced
+library(kableExtra) # for formatting tables
+library(moderndive) # for getting regression tables
+library(skimr) # for skim
+library(mosaic)
+library(leaflet) # for interactive HTML maps
+library(tidytext)
+library(viridis)
+library(vroom)
+library(Hmisc) # to compute correlation matrix with p-values
+library(corrplot) # to plot corr matrix
+library(huxtable)
+library(ggthemes)
+library(spotifyr)
+library(knitr)
+library(tuneR)
+library(vembedr)
 ```
 
-## R Markdown
+# Moon Panda
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+My brother, Gustav, and his wife, Maddy, have a band together. The band is called [Moon Panda](https://www.facebook.com/MoonPandaMusic/).
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+They have just released their newest song [Vacationer on Spotify](https://open.spotify.com/track/278xRLcHJj4cobGDe8BLp3?si=aabe5a817ee14819) along with its [music video on Youtube](https://www.youtube.com/watch?v=1oSCsi9GK0s). 

@@ -1,0 +1,22 @@
+---
+categories:
+- ""
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: ""
+draft: false
+image: OttoMoltke_CV.jpg
+keywords: ""
+slug: bike
+title: Tour of Southern Denmark
+---
+```{r}
+library(XML)
+library(OpenStreetMap)
+library(lubridate))
+library(ggmap)
+library(ggplot2)
+library(raster)
+library(sp)
+```
+

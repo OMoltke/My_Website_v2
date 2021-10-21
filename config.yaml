@@ -34,7 +34,7 @@ params:
     text: Please visit [this page](/)
   favicon: favicon.ico
   footer:
-    copyright: Company Name
+    copyright: London Business School
     enable: yes
     quicklinks:
       - alt: #
@@ -63,15 +63,15 @@ params:
       - name: Get Started
         url: blogs
     button2:
-      - name: Subscribe
-        url: '#'
+      - name: Contact
+        url: 'mailto:omoltke.mfa2022@london.edu'
     links:
       - name: Home
         url: '#'
       - name: #
         url: #
-      - name: Generic Blog
-        url: blogs/ipsum
+      - name: About
+        url: blogs/about
       - name: Elements
         url: elements.html
     menu: Menu
@@ -84,13 +84,13 @@ params:
         subtitle: Experiences and achievements
         title: Resume
         url: blogs/cv
-      - image: pic02.jpg
-        subtitle: Experiences in London so far
-        title: Moving to London
+      - image: martinmoritzsawtwo.jpg
+        subtitle: Making new friends while making an difference
+        title: MFA Away Day
         url: blogs/experiences
       - image: pic03.jpg
-        subtitle: Politically influenced?
-        title: Vaccination rates in the US
+        subtitle: Science and politics
+        title: Climate change - Data and opinion
         url: blogs/programming
       - image: pic04.jpg
         subtitle: A band you should check out!
@@ -99,11 +99,11 @@ params:
       - image: pic05.jpg
         subtitle: How do we save the planet while feeding its population?
         title: The Future of Farming
-        url: blogs/ipsum
+        url: blogs/farming
       - image: pic06.jpg
-        subtitle: A Danish Summer spent on the bike
+        subtitle: A Danish Summer day spent on the bike
         title: A Tour of Southern Denmark
-        url: blogs/ipsum
+        url: blogs/bike
   two:
     buttonText: Get Started
     enable: no
